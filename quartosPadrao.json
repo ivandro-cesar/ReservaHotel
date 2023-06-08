@@ -1,0 +1,42 @@
+[
+    {
+        "_numero": 1,
+        "_disponivel": "true",
+        "_valorDiaria": "100.00",
+        "_maxPessoas": "2",
+        "_suite": "false",
+        "_hidro": "false"
+    },
+    {
+        "_numero": 2,
+        "_disponivel": "true",
+        "_valorDiaria": "100.00",
+        "_maxPessoas": "2",
+        "_suite": "false",
+        "_hidro": "false"
+    },
+    {
+        "_numero": 3,
+        "_disponivel": "true",
+        "_valorDiaria": "100.00",
+        "_maxPessoas": "2",
+        "_suite": "false",
+        "_hidro": "false"
+    },
+    {
+        "_numero": 4,
+        "_disponivel": "true",
+        "_valorDiaria": "100.00",
+        "_maxPessoas": "2",
+        "_suite": "false",
+        "_hidro": "false"
+    },
+    {
+        "_numero": 5,
+        "_disponivel": "true",
+        "_valorDiaria": "100.00",
+        "_maxPessoas": "2",
+        "_suite": "false",
+        "_hidro": "false"
+    }
+]

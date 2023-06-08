@@ -1,0 +1,26 @@
+[
+    {
+        "_numero": 6,
+        "_disponivel": "true",
+        "_valorDiaria": "250.00",
+        "_maxPessoas": "4",
+        "_suite": "false",
+        "_hidro": "false"
+    },
+    {
+        "_numero": 7,
+        "_disponivel": "true",
+        "_valorDiaria": "250.00",
+        "_maxPessoas": "4",
+        "_suite": "true",
+        "_hidro": "false"
+    },
+    {
+        "_numero": 8,
+        "_disponivel": "true",
+        "_valorDiaria": "250.00",
+        "_maxPessoas": "4",
+        "_suite": "true",
+        "_hidro": "false"
+    }
+]

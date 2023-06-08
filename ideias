@@ -1,0 +1,56 @@
+Cadastrar Cliente
+
+Consultar clientes
+
+Criar reserva
+    -   Consultar quartos
+    -   Selecionar cliente
+    -   Quantidade pessoas
+    -   Periodo(check-in/check-out)
+            
+
+Consultar reserva
+    -   Listar reservas do hotel
+    -   Opção de cancelar reserva
+
+
+-------------------------------------
+
+Classes necessárias:
+    -   Pessoa
+        - Pessoa:Cliente
+        *id
+        *nome
+        *cpf
+        
+        -   Cliente
+
+    -   Quarto
+        *disponivel
+
+        -   Padrão
+            *valorDiaria
+            *maxPessoas
+            *suite              =false
+            *hidromassagem      =false
+
+        -   Luxo
+            *valorDiaria
+            *maxPessoas
+            *suite              =true
+            *hidromassagem      =false
+
+        -   Master
+            *valorDiaria
+            *maxPessoas
+            *suite              =true
+            *hidromassagem      =true
+
+    -   Reserva
+        *cliente
+        *qntPessoas
+        *quarto
+        *check-in
+        *check-out
+
+    -   Hotel

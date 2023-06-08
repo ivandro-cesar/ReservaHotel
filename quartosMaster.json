@@ -1,0 +1,18 @@
+[
+    {
+        "_numero": 9,
+        "_disponivel": "true",
+        "_valorDiaria": "500.00",
+        "_maxPessoas": "5",
+        "_suite": "true",
+        "_hidro": "true"
+    },
+    {
+        "_numero": 10,
+        "_disponivel": "true",
+        "_valorDiaria": "500.00",
+        "_maxPessoas": "5",
+        "_suite": "true",
+        "_hidro": "true"
+    }
+]
