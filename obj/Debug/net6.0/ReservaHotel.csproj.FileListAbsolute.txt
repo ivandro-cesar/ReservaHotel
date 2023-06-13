@@ -13,3 +13,5 @@ C:\Users\aluno\Documents\GitHub\ReservaHotel\obj\Debug\net6.0\refint\ReservaHote
 C:\Users\aluno\Documents\GitHub\ReservaHotel\obj\Debug\net6.0\ReservaHotel.pdb
 C:\Users\aluno\Documents\GitHub\ReservaHotel\obj\Debug\net6.0\ReservaHotel.genruntimeconfig.cache
 C:\Users\aluno\Documents\GitHub\ReservaHotel\obj\Debug\net6.0\ref\ReservaHotel.dll
+C:\Users\aluno\Documents\GitHub\ReservaHotel\bin\Debug\net6.0\Newtonsoft.Json.dll
+C:\Users\aluno\Documents\GitHub\ReservaHotel\obj\Debug\net6.0\ReservaHotel.csproj.CopyComplete

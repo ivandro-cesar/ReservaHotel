@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "SdDI6EyK3yPMVH1QAlfmysiqoh79ak9JhHjthcr3KEDhQrZ+tOeGEQfOKV9uabjjTPX66cugWRCtZFHJj9+dEA==",
+  "dgSpecHash": "onua3NZ5fSUfcpDuh+zu8zIP3kIPzCUzr4wCh/hFRrOjnVWtId0SYNZqgqsrI+OABxBRmosbvTxg2euiRUYgLQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\aluno\\Documents\\GitHub\\ReservaHotel\\ReservaHotel.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\aluno\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512"
+  ],
   "logs": []
 }

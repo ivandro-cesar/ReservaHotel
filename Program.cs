@@ -6,8 +6,10 @@ namespace Hotel{
         static void Main(string[] args){
             
             int opcao;
+            Hotel hotel = new Hotel();
 
                 do{
+                    hotel.CarregarDados();
                     Console.Clear();
                     Console.WriteLine("----| Bem vindo ao Hotel |----");
                     Console.WriteLine("Selecione a opção desejada:");
@@ -21,10 +23,10 @@ namespace Hotel{
 
                     switch(opcao){
                         case 1:
-
+                            Cliente.CadastroCliente(hotel);
                             break;
                         case 2:
-
+                            Cliente.ConsultaClientes(hotel);
                             break;
                         case 3:
 
@@ -37,6 +39,8 @@ namespace Hotel{
                             break;
                     }
                 }while(opcao!=0);
+
+                
         }
     }
 }
