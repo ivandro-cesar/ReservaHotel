@@ -1,0 +1,23 @@
+[
+    {
+        "_numero": 6,
+        "_disponivel": true,
+        "_valorDiaria": 500.0,
+        "_maxPessoas": 3,
+        "Suite": true
+    },
+    {
+        "_numero": 7,
+        "_disponivel": true,
+        "_valorDiaria": 500.0,
+        "_maxPessoas": 3,
+        "Suite": true
+    },
+    {
+        "_numero": 8,
+        "_disponivel": true,
+        "_valorDiaria": 500.0,
+        "_maxPessoas": 3,
+        "Suite": true
+    }
+]

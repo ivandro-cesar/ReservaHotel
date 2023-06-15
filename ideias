@@ -54,3 +54,11 @@ Classes necessárias:
         *check-out
 
     -   Hotel
+
+
+    Próximos passos
+        Integrar todos os tipos de quartos ao sistema
+        Quantidade de pessoas nos quartos
+        Data de checkin e checkout
+        Encapsulamento e properties
+        

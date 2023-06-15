@@ -29,13 +29,30 @@ namespace Hotel{
                             Cliente.ConsultaClientes(hotel);
                             break;
                         case 3:
-
+                            Reserva.CriaReserva(hotel);
                             break;
                         case 4:
-
+                            int opcaoReserva;
+                            Reserva.ListarReservas(hotel);
+                            Console.WriteLine("\nSelecione uma opção:");
+                            Console.WriteLine("1 - Excluir reserva");
+                            Console.WriteLine("2 - Voltar");
+                            int.TryParse(Console.ReadLine(), out opcaoReserva);
+                                switch(opcaoReserva){
+                                    case 1:
+                                        Console.WriteLine("\nDigite o ID da reserva para excluir...");
+                                        int idExcluir = Int32.Parse(Console.ReadLine());
+                                        hotel.CancelarReservaQuarto(idExcluir,hotel);
+                                        Reserva.ListarReservas(hotel);
+                                        break;
+                                    case 2:
+                                        break;
+                                }
                             break;
                         case 0:
-
+                            Console.Clear();
+                            Console.WriteLine("Sistema encerrado!");
+                            Environment.Exit(0);                                                       
                             break;
                     }
                 }while(opcao!=0);

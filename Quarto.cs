@@ -1,10 +1,12 @@
+using Newtonsoft.Json;
+
 namespace Hotel{
 
     public abstract class Quarto{
-        private int _numero;
-        private bool _disponivel;
-        private double _valorDiaria;
-        private int _maxPessoas;
+        public int _numero;
+        public bool _disponivel;
+        public double _valorDiaria;
+        public int _maxPessoas;
 
         public int getNum(){
             return _numero;
@@ -16,6 +18,9 @@ namespace Hotel{
             _disponivel = disp;
         }
 
+        public static void SalvarDadosQuartos(Hotel hotel){
+            File.WriteAllText("quartosLuxo.json", JsonConvert.SerializeObject(hotel.quartosLuxo));
+        }
     }
 
 }
