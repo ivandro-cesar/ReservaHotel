@@ -15,6 +15,12 @@ namespace Hotel{
 
         public static void CriaReserva(Hotel hotel){
             Console.Clear();
+            Console.WriteLine("Qual tipo de quarto deseja reservar?");
+            Console.WriteLine("1 - Quarto padrão");
+            Console.WriteLine("2 - Quarto luxo");
+            Console.WriteLine("3 - Quarto master");
+            Console.WriteLine("0 - Voltar");
+            int v = Int32.Parse(Console.ReadLine());
             Console.WriteLine("Digite o CPF do cliente:");
             string cpf = Console.ReadLine();
             Console.WriteLine("\nDigite o número do quarto:");
