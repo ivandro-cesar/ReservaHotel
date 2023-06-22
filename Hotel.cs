@@ -10,18 +10,9 @@ namespace Hotel{
         public List<QuartoMaster> quartosMaster = new List<QuartoMaster>();
         public List<Reserva> reservas = new List<Reserva>();
 
-        public void ReservarQuarto(string cpfCliente, int numQuarto, int qtdPessoas){
+        public void ReservarQuarto(string cpfCliente, int numQuarto, int qtdPessoas,int v){
             try{
-                QuartoLuxo quartoLuxo = quartosLuxo.Find(q => q.getNum() == numQuarto && q.getDisponivel() == true);
-                
-                if(quartoLuxo == null){
-                    Console.Clear();
-                    Console.WriteLine("Quarto não encontrado ou indisponível!");
-                    Console.ReadLine();
-                    return;
-                }
-
-                Cliente cliente = clientes.Find(c => c.getCpf() == cpfCliente);
+                Cliente cliente = clientes.Find(c => c.Cpf == cpfCliente);
 
                 if(cliente == null){
                     Console.Clear();
@@ -29,31 +20,65 @@ namespace Hotel{
                     Console.ReadLine();
                     return;
                 }
-                
-                if(qtdPessoas > quartoLuxo._maxPessoas){
-                    Console.Clear();
-                    Console.WriteLine("Quantidade de pessoas acima da permitida para esse quarto!");
-                    Console.ReadLine();
-                    return;
+                if(v == 1){
+                    QuartoPadrao quartoPadrao = quartosPadrao.Find(q => q.Numero == numQuarto && q.Disponivel == true);
+                    if(quartoPadrao == null){
+                        Console.Clear();
+                        Console.WriteLine("Quarto não encontrado ou indisponível!");
+                        Console.ReadLine();
+                        return;
+                    }
+                    if(qtdPessoas > quartoPadrao.MaxPessoas){
+                        Console.Clear();
+                        Console.WriteLine("Quantidade de pessoas acima da permitida para esse quarto!");
+                        Console.ReadLine();
+                        return;
+                    }
+                    Reserva reserva = new Reserva(reservas.Count + 1,cliente,quartoPadrao.Numero,qtdPessoas,new DateTime(),new DateTime());
+                    quartoPadrao.setDisponivel(false);
+                    reservas.Add(reserva);
+                }else if(v == 2){
+                    QuartoLuxo quartoLuxo = quartosLuxo.Find(q => q.Numero == numQuarto && q.Disponivel == true);
+                    if(quartoLuxo == null){
+                        Console.Clear();
+                        Console.WriteLine("Quarto não encontrado ou indisponível!");
+                        Console.ReadLine();
+                        return;
+                    }
+                    if(qtdPessoas > quartoLuxo.MaxPessoas){
+                        Console.Clear();
+                        Console.WriteLine("Quantidade de pessoas acima da permitida para esse quarto!");
+                        Console.ReadLine();
+                        return;
+                    }
+                    Reserva reserva = new Reserva(reservas.Count + 1,cliente,quartoLuxo.Numero,qtdPessoas,new DateTime(),new DateTime());
+                    quartoLuxo.setDisponivel(false);
+                    reservas.Add(reserva);
+                }else if(v == 3){
+                    QuartoMaster quartoMaster = quartosMaster.Find(q => q.Numero == numQuarto && q.Disponivel == true);
+                    if(quartoMaster == null){
+                        Console.Clear();
+                        Console.WriteLine("Quarto não encontrado ou indisponível!");
+                        Console.ReadLine();
+                        return;
+                    }
+                    if(qtdPessoas > quartoMaster.MaxPessoas){
+                        Console.Clear();
+                        Console.WriteLine("Quantidade de pessoas acima da permitida para esse quarto!");
+                        Console.ReadLine();
+                        return;
+                    }
+                    Reserva reserva = new Reserva(reservas.Count + 1,cliente,quartoMaster.Numero,qtdPessoas,new DateTime(),new DateTime());
+                    quartoMaster.setDisponivel(false);
+                    reservas.Add(reserva);
                 }
-
-                Reserva reserva = new Reserva{
-                    Id = reservas.Count + 1,
-                    CpfCliente = cliente._cpf,
-                    NomeCLiente = cliente._nome,
-                    NumQuarto = quartoLuxo._numero,
-                    QntPessoas = qtdPessoas,
-                    Check_in = new DateTime(),
-                    Check_out = new DateTime(),
-                };
-                quartoLuxo.setDisponivel(false);
-                reservas.Add(reserva);
+                
                 Console.Clear();
                 Console.WriteLine("Reserva criada com sucesso!");
                 Console.ReadLine();
 
             }catch(Exception e){
-
+                Console.WriteLine("Ocorreu um erro: "+e);
             }
         }
         public void CancelarReservaQuarto(int verificador,Hotel hotel){
@@ -61,8 +86,8 @@ namespace Hotel{
                 if(x.Id == verificador){
                     reservas.Remove(x);
                     quartosLuxo.ForEach(n => {
-                        if(x.NumQuarto == n._numero){
-                            n._disponivel = true;
+                        if(x.NumQuarto == n.Numero){
+                            n.setDisponivel(true);
                         }
                     });
                 }
@@ -81,6 +106,12 @@ namespace Hotel{
             }
             if(File.Exists("quartosLuxo.json")){
                 quartosLuxo = JsonConvert.DeserializeObject<List<QuartoLuxo>>(File.ReadAllText("quartosLuxo.json"));
+            }
+            if(File.Exists("quartosPadrao.json")){
+                quartosPadrao = JsonConvert.DeserializeObject<List<QuartoPadrao>>(File.ReadAllText("quartosPadrao.json"));
+            }
+            if(File.Exists("quartosMaster.json")){
+                quartosMaster = JsonConvert.DeserializeObject<List<QuartoMaster>>(File.ReadAllText("quartosMaster.json"));
             }
             if(File.Exists("reservas.json")){
                 reservas = JsonConvert.DeserializeObject<List<Reserva>>(File.ReadAllText("reservas.json"));

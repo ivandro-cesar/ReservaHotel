@@ -2,10 +2,14 @@ using System;
 
 namespace Hotel{
     public class QuartoLuxo : Quarto{
-        public bool Suite{get;set;}
+        public bool Suite{get;private set;}
 
-        public QuartoLuxo(){
-            //this._maxPessoas = 3;
+        public QuartoLuxo(int numero,bool disponivel,double valorDiaria,int maxPessoas,bool suite){
+            Numero = numero;
+            Disponivel = disponivel;
+            ValorDiaria = valorDiaria;
+            MaxPessoas = maxPessoas;
+            Suite = suite;
         }
 
         public static void ConsultaQuartosLuxo(Hotel hotel){
@@ -13,7 +17,7 @@ namespace Hotel{
                 Console.Clear();
                 Console.WriteLine("ID          Nome");    
                 hotel.quartosLuxo.ForEach(obj => {
-                    Console.Write($"{obj.getNum()}          ");
+                    Console.Write($"{obj.Numero}          ");
                 });
                 Console.ReadLine();
             }

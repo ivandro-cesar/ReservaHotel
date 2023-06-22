@@ -4,14 +4,21 @@ using Newtonsoft.Json;
 namespace Hotel{
     public class Reserva{
 
-        public int Id;
-        public string CpfCliente;
-        public string NomeCLiente;
-        public int NumQuarto;
-        public int QntPessoas;
-        public DateTime Check_in;
-        public DateTime Check_out;
+        public int Id {get;private set;}
+        public Cliente Cliente{get;private set;}
+        public int NumQuarto{get;private set;}
+        public int QntPessoas{get;private set;}
+        public DateTime Check_in{get;private set;}
+        public DateTime Check_out{get;private set;}
 
+        public Reserva(int id,Cliente cliente,int numQuarto, int qtdPessoas, DateTime check_in, DateTime check_out){
+            Id = id;
+            Cliente = cliente;
+            NumQuarto = numQuarto;
+            QntPessoas = qtdPessoas;
+            Check_in = check_in;
+            Check_out = check_out;
+        }
 
         public static void CriaReserva(Hotel hotel){
             Console.Clear();
@@ -27,10 +34,11 @@ namespace Hotel{
             int numQUarto = Int32.Parse(Console.ReadLine());
             Console.WriteLine("\nDigite a quantidade de pessoas:");
             int qtdPessoas = Int32.Parse(Console.ReadLine());
-            hotel.ReservarQuarto(cpf,numQUarto,qtdPessoas);
+            hotel.ReservarQuarto(cpf,numQUarto,qtdPessoas,v);
             
             SalvarDadosReserva(hotel);
             Quarto.SalvarDadosQuartos(hotel);
+            Console.ReadLine();
         }
         public static void SalvarDadosReserva(Hotel hotel){
             Console.Clear();
@@ -43,7 +51,7 @@ namespace Hotel{
                 hotel.reservas.ForEach(obj => {
                     Console.Write($"{obj.Id}              ");
                     Console.Write($"{obj.NumQuarto}            ");
-                    Console.WriteLine($"{obj.NomeCLiente}");
+                    Console.WriteLine($"{obj.Cliente.Nome}");
                 });
             }
         }

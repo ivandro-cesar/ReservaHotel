@@ -2,8 +2,16 @@ using System;
 
 namespace Hotel{
     public class QuartoMaster : Quarto{
-        private bool _suite{get;set;}
-        private bool _hidro{get;set;}
+        public bool Suite{get;private set;}
+        public bool Hidro{get;private set;}
 
+        public QuartoMaster(int numero,bool disponivel,double valorDiaria,int maxPessoas,bool suite,bool hidro){
+            Numero = numero;
+            Disponivel = disponivel;
+            ValorDiaria = valorDiaria;
+            MaxPessoas = maxPessoas;
+            Suite = suite;
+            Hidro = hidro;
+        }
     }
 }

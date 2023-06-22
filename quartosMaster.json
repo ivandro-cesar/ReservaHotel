@@ -1,18 +1,1 @@
-[
-    {
-        "_numero": 9,
-        "_disponivel": "true",
-        "_valorDiaria": "500.00",
-        "_maxPessoas": "5",
-        "_suite": "true",
-        "_hidro": "true"
-    },
-    {
-        "_numero": 10,
-        "_disponivel": "true",
-        "_valorDiaria": "500.00",
-        "_maxPessoas": "5",
-        "_suite": "true",
-        "_hidro": "true"
-    }
-]
+[{"Suite":true,"Hidro":true,"Numero":9,"Disponivel":false,"ValorDiaria":500.0,"MaxPessoas":5},{"Suite":true,"Hidro":true,"Numero":10,"Disponivel":true,"ValorDiaria":500.0,"MaxPessoas":5}]

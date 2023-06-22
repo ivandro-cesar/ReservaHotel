@@ -1,11 +1,11 @@
 [
     {
-        "_numero": 1,
-        "_disponivel": "true",
-        "_valorDiaria": "100.00",
-        "_maxPessoas": "2",
-        "_suite": "false",
-        "_hidro": "false",
+        "Numero": 1,
+        "Disponivel": "true",
+        "ValorDiaria": "100.00",
+        "MaxPessoas": "2",
+        "Suite": "false",
+        "Hidro": "false",
     },
     {
         "_numero": 2,
