@@ -12,6 +12,22 @@ namespace Hotel{
             Disponivel = disp;
         }
 
+        public static void ListarQuartos(Hotel hotel,int v){
+            if(v == 1){
+                hotel.quartosPadrao.ForEach(o => {
+                    Console.WriteLine($"N°: {o.Numero}");
+                });
+            }else if(v == 2){
+                hotel.quartosLuxo.ForEach(o => {
+                    Console.WriteLine($"N°: {o.Numero}");
+                });
+            }else if(v == 3){
+                hotel.quartosMaster.ForEach(o => {
+                    Console.WriteLine($"N°: {o.Numero}");
+                });
+            }
+        }
+
         public static void SalvarDadosQuartos(Hotel hotel){
             File.WriteAllText("quartosLuxo.json", JsonConvert.SerializeObject(hotel.quartosLuxo));
             File.WriteAllText("quartosPadrao.json", JsonConvert.SerializeObject(hotel.quartosPadrao));

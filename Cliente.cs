@@ -38,8 +38,8 @@ namespace Hotel{
                     Console.Write($"{obj.Id}          ");
                     Console.WriteLine($"{obj.Nome}");
                 });
-                Console.ReadLine();
             }
+            Console.ReadLine();
         }
         public static void SalvarDadosCliente(Hotel hotel){
             Console.Clear();

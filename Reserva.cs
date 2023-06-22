@@ -31,6 +31,7 @@ namespace Hotel{
             Console.WriteLine("Digite o CPF do cliente:");
             string cpf = Console.ReadLine();
             Console.WriteLine("\nDigite o número do quarto:");
+            Quarto.ListarQuartos(hotel,v);
             int numQUarto = Int32.Parse(Console.ReadLine());
             Console.WriteLine("\nDigite a quantidade de pessoas:");
             int qtdPessoas = Int32.Parse(Console.ReadLine());
