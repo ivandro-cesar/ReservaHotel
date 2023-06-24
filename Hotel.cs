@@ -117,6 +117,16 @@ namespace Hotel{
                 reservas = JsonConvert.DeserializeObject<List<Reserva>>(File.ReadAllText("reservas.json"));
             }
         }
+        public string NullString(string? s){
+            if(s == null){
+                throw new ArgumentNullException(paramName: nameof(s), message: "Esse campo não pode ser nulo");
+            }else if(s == ""){
+                throw new ArgumentNullException(paramName: nameof(s), message: "Esse campo não pode ser nulo");
+            }
+            else{
+                return s;
+            }
+        }
     }
 
 }

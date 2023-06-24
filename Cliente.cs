@@ -4,25 +4,19 @@ using Newtonsoft.Json;
 namespace Hotel{
 
     public class Cliente : Pessoa{
+        public Cliente(int id, string cpf, string nome, string telefone) : base(id, cpf, nome, telefone){}
 
-        public Cliente(int id,string cpf, string nome, string telefone){
-            Id = id;
-            Cpf = cpf;
-            Nome = nome;
-            Telefone = telefone;
-        }
-        
         public override void ExibirPessoas(){
             base.ExibirPessoas();
         }
         public static void CadastroCliente(Hotel hotel){
                     Console.Clear();
                     Console.WriteLine("Digite o nome do cliente:");
-                    string nomeCliente = Console.ReadLine();
+                    string nomeCliente = hotel.NullString(Console.ReadLine());
                     Console.WriteLine("\nDigite o CPF do cliente:");
-                    string cpfCliente = Console.ReadLine();
+                    string cpfCliente = hotel.NullString(Console.ReadLine());
                     Console.WriteLine("\nDigite o telefone do cliente:");
-                    string numCliente = Console.ReadLine();
+                    string numCliente = hotel.NullString(Console.ReadLine());
                     Cliente cliente = new Cliente(hotel.clientes.Count + 1,cpfCliente,nomeCliente,numCliente);
                     hotel.clientes.Add(cliente);
                     SalvarDadosCliente(hotel);

@@ -27,14 +27,14 @@ namespace Hotel{
             Console.WriteLine("2 - Quarto luxo");
             Console.WriteLine("3 - Quarto master");
             Console.WriteLine("0 - Voltar");
-            int v = Int32.Parse(Console.ReadLine());
+            int v = Int32.Parse(hotel.NullString(Console.ReadLine()));
             Console.WriteLine("Digite o CPF do cliente:");
-            string cpf = Console.ReadLine();
+            string cpf = hotel.NullString(Console.ReadLine());
             Console.WriteLine("\nDigite o número do quarto:");
             Quarto.ListarQuartos(hotel,v);
-            int numQUarto = Int32.Parse(Console.ReadLine());
+            int numQUarto = Int32.Parse(hotel.NullString(Console.ReadLine()));
             Console.WriteLine("\nDigite a quantidade de pessoas:");
-            int qtdPessoas = Int32.Parse(Console.ReadLine());
+            int qtdPessoas = Int32.Parse(hotel.NullString(Console.ReadLine()));
             hotel.ReservarQuarto(cpf,numQUarto,qtdPessoas,v);
             
             SalvarDadosReserva(hotel);

@@ -1,1 +1,20 @@
-[{"Cpf":"123123123","Nome":"Jheison","Id":1,"Telefone":"78433242"},{"Cpf":"987654321","Nome":"Ivandro","Id":2,"Telefone":"23564763"}]
+[
+    {
+        "Cpf": "123123123",
+        "Nome": "Jheison",
+        "Id": 1,
+        "Telefone": "78433242"
+    },
+    {
+        "Cpf": "987654321",
+        "Nome": "Ivandro",
+        "Id": 2,
+        "Telefone": "23564763"
+    },
+    {
+        "Cpf": "63471547",
+        "Nome": "Joelson",
+        "Id": 3,
+        "Telefone": "2147613874"
+    }
+]

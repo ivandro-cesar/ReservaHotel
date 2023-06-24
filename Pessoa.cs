@@ -8,6 +8,13 @@ namespace Hotel{
         public int Id{get;protected set;}
         public string Telefone{get;protected set;}
 
+        public Pessoa(int id,string cpf, string nome, string telefone){
+            Id = id;
+            Cpf = cpf;
+            Nome = nome;
+            Telefone = telefone;
+        }
+
         public virtual void ExibirPessoas(){
             Console.WriteLine($"CPF: {Cpf}, nome: {Nome}");
         }

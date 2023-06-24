@@ -41,7 +41,7 @@ namespace Hotel{
                                 switch(opcaoReserva){
                                     case 1:
                                         Console.WriteLine("\nDigite o ID da reserva para excluir...");
-                                        int idExcluir = Int32.Parse(Console.ReadLine());
+                                        int idExcluir = Int32.Parse(hotel.NullString(Console.ReadLine()));
                                         hotel.CancelarReservaQuarto(idExcluir,hotel);
                                         Reserva.ListarReservas(hotel);
                                         break;
@@ -56,7 +56,6 @@ namespace Hotel{
                             break;
                     }
                 }while(opcao!=0);
-
                 
         }
     }
