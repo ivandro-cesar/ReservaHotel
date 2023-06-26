@@ -1,5 +1,6 @@
 using System;
 using Newtonsoft.Json;
+using ConsoleTables;
 
 namespace Hotel{
 
@@ -17,7 +18,7 @@ namespace Hotel{
                     string cpfCliente = hotel.NullString(Console.ReadLine());
                     Console.WriteLine("\nDigite o telefone do cliente:");
                     string numCliente = hotel.NullString(Console.ReadLine());
-                    Cliente cliente = new Cliente(hotel.clientes.Count + 1,cpfCliente,nomeCliente,numCliente);
+                    Cliente cliente = new Cliente(hotel.clientes.Last().Id + 1,cpfCliente,nomeCliente,numCliente);
                     hotel.clientes.Add(cliente);
                     SalvarDadosCliente(hotel);
                     Console.Clear();
@@ -25,14 +26,12 @@ namespace Hotel{
                     Console.ReadLine();
         }
         public static void ConsultaClientes(Hotel hotel){
-            for(int i=0;i < hotel.clientes.Count; i++){
-                Console.Clear();
-                Console.WriteLine("ID          Nome");    
-                hotel.clientes.ForEach(obj => {
-                    Console.Write($"{obj.Id}          ");
-                    Console.WriteLine($"{obj.Nome}");
-                });
-            }
+            var table = new ConsoleTable("Id","Nome","CPF"); 
+            Console.Clear();
+            hotel.clientes.ForEach(obj => {
+                table.AddRow(obj.Id, obj.Nome, obj.Cpf);
+            });
+            table.Write();
             Console.ReadLine();
         }
         public static void SalvarDadosCliente(Hotel hotel){

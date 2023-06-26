@@ -1,5 +1,6 @@
 using System;
 using Newtonsoft.Json;
+using ConsoleTables;
 
 namespace Hotel{
     public class Reserva{
@@ -66,18 +67,12 @@ namespace Hotel{
             File.WriteAllText("reservas.json",  JsonConvert.SerializeObject(hotel.reservas));
         }
         public static void ListarReservas(Hotel hotel){
-            for(int i=0;i < hotel.reservas.Count; i++){
-                Console.Clear();
-                var table = new ConsoleTable("ID","N°Quarto","Cliente","Checkin","Checkout");
-                //Console.WriteLine("ID        N°Quarto          Cliente          Checkin          Checkout");    
-                hotel.reservas.ForEach(obj => {
-                    Console.Write($"{obj.Id}              ");
-                    Console.Write($"{obj.NumQuarto}            ");
-                    Console.Write($"{obj.Cliente.Nome}            ");
-                    Console.Write($"{obj.Check_in.ToString("dd/MM/yy")}         ");
-                    Console.WriteLine($"{obj.Check_out.ToString("d/M/yy")}");
-                });
-            }
+            var table = new ConsoleTable("ID","N°Quarto","Cliente","Checkin","Checkout"); 
+            Console.Clear(); 
+            hotel.reservas.ForEach(obj => {
+                table.AddRow(obj.Id, obj.NumQuarto, obj.Cliente.Nome, obj.Check_in.ToString("dd/MM/yy"), obj.Check_out.ToString("d/M/yy"));
+            });
+            table.Write();
         }
     }
 }

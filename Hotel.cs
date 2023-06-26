@@ -34,7 +34,7 @@ namespace Hotel{
                         Console.ReadLine();
                         return;
                     }
-                    Reserva reserva = new Reserva(reservas.Count + 1,cliente,quartoPadrao.Numero,qtdPessoas,checkin,checkout);
+                    Reserva reserva = new Reserva(reservas.Last().Id + 1,cliente,quartoPadrao.Numero,qtdPessoas,checkin,checkout);
                     quartoPadrao.setDisponivel(false);
                     reservas.Add(reserva);
                 }else if(v == 2){
@@ -51,7 +51,7 @@ namespace Hotel{
                         Console.ReadLine();
                         return;
                     }
-                    Reserva reserva = new Reserva(reservas.Count + 1,cliente,quartoLuxo.Numero,qtdPessoas,checkin,checkout);
+                    Reserva reserva = new Reserva(reservas.Last().Id + 1,cliente,quartoLuxo.Numero,qtdPessoas,checkin,checkout);
                     quartoLuxo.setDisponivel(false);
                     reservas.Add(reserva);
                 }else if(v == 3){
@@ -68,7 +68,7 @@ namespace Hotel{
                         Console.ReadLine();
                         return;
                     }
-                    Reserva reserva = new Reserva(reservas.Count + 1,cliente,quartoMaster.Numero,qtdPessoas,checkin,checkout);
+                    Reserva reserva = new Reserva(reservas.Last().Id + 1,cliente,quartoMaster.Numero,qtdPessoas,checkin,checkout);
                     quartoMaster.setDisponivel(false);
                     reservas.Add(reserva);
                 }
@@ -82,28 +82,29 @@ namespace Hotel{
             }
         }
         public void CancelarReservaQuarto(int verificador,Hotel hotel){
-            reservas.Find(x => {
-                if(x.Id == verificador){
-                    reservas.Remove(x);
-                    quartosLuxo.ForEach(n => {
-                        if(x.NumQuarto == n.Numero){
-                            n.setDisponivel(true);
-                        }
-                    });
-                    quartosPadrao.ForEach(n => {
-                        if(x.NumQuarto == n.Numero){
-                            n.setDisponivel(true);
-                        }
-                    });
-                    quartosMaster.ForEach(n => {
-                        if(x.NumQuarto == n.Numero){
-                            n.setDisponivel(true);
-                        }
-                    });
+            Reserva x = reservas.Find(q => q.Id == verificador);
+            if(x == null){
+                Console.WriteLine("Reserva não encontrada");
+                Console.ReadLine();
+                return;
+            } 
+            reservas.Remove(x);
+            quartosLuxo.ForEach(n => {
+                if(x.NumQuarto == n.Numero){
+                    n.setDisponivel(true);
                 }
-                return true;
             });
-            
+            quartosPadrao.ForEach(n => {
+                if(x.NumQuarto == n.Numero){
+                    n.setDisponivel(true);
+                }
+            });
+            quartosMaster.ForEach(n => {
+                if(x.NumQuarto == n.Numero){
+                    n.setDisponivel(true);
+                }
+            });
+                
             Reserva.SalvarDadosReserva(hotel);
             QuartoLuxo.SalvarDadosQuartos(hotel);
             Console.Clear();

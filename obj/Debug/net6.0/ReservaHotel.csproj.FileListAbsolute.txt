@@ -32,3 +32,4 @@ C:/Users/aluno/Documents/GitHub/ReservaHotel/obj/Debug/net6.0/ReservaHotel.cspro
 /home/traineeti12/Documentos/Jheison/ReservaHotel/obj/Debug/net6.0/ReservaHotel.pdb
 /home/traineeti12/Documentos/Jheison/ReservaHotel/obj/Debug/net6.0/ReservaHotel.genruntimeconfig.cache
 /home/traineeti12/Documentos/Jheison/ReservaHotel/obj/Debug/net6.0/ref/ReservaHotel.dll
+/home/traineeti12/Documentos/Jheison/ReservaHotel/bin/Debug/net6.0/ConsoleTables.dll
