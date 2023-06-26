@@ -10,7 +10,7 @@ namespace Hotel{
         public List<QuartoMaster> quartosMaster = new List<QuartoMaster>();
         public List<Reserva> reservas = new List<Reserva>();
 
-        public void ReservarQuarto(string cpfCliente, int numQuarto, int qtdPessoas,int v){
+        public void ReservarQuarto(string cpfCliente, int numQuarto, int qtdPessoas, DateTime checkin, DateTime checkout,int v){
             try{
                 Cliente cliente = clientes.Find(c => c.Cpf == cpfCliente);
 
@@ -34,7 +34,7 @@ namespace Hotel{
                         Console.ReadLine();
                         return;
                     }
-                    Reserva reserva = new Reserva(reservas.Count + 1,cliente,quartoPadrao.Numero,qtdPessoas,new DateTime(),new DateTime());
+                    Reserva reserva = new Reserva(reservas.Count + 1,cliente,quartoPadrao.Numero,qtdPessoas,checkin,checkout);
                     quartoPadrao.setDisponivel(false);
                     reservas.Add(reserva);
                 }else if(v == 2){
@@ -51,7 +51,7 @@ namespace Hotel{
                         Console.ReadLine();
                         return;
                     }
-                    Reserva reserva = new Reserva(reservas.Count + 1,cliente,quartoLuxo.Numero,qtdPessoas,new DateTime(),new DateTime());
+                    Reserva reserva = new Reserva(reservas.Count + 1,cliente,quartoLuxo.Numero,qtdPessoas,checkin,checkout);
                     quartoLuxo.setDisponivel(false);
                     reservas.Add(reserva);
                 }else if(v == 3){
@@ -68,7 +68,7 @@ namespace Hotel{
                         Console.ReadLine();
                         return;
                     }
-                    Reserva reserva = new Reserva(reservas.Count + 1,cliente,quartoMaster.Numero,qtdPessoas,new DateTime(),new DateTime());
+                    Reserva reserva = new Reserva(reservas.Count + 1,cliente,quartoMaster.Numero,qtdPessoas,checkin,checkout);
                     quartoMaster.setDisponivel(false);
                     reservas.Add(reserva);
                 }
@@ -86,6 +86,16 @@ namespace Hotel{
                 if(x.Id == verificador){
                     reservas.Remove(x);
                     quartosLuxo.ForEach(n => {
+                        if(x.NumQuarto == n.Numero){
+                            n.setDisponivel(true);
+                        }
+                    });
+                    quartosPadrao.ForEach(n => {
+                        if(x.NumQuarto == n.Numero){
+                            n.setDisponivel(true);
+                        }
+                    });
+                    quartosMaster.ForEach(n => {
                         if(x.NumQuarto == n.Numero){
                             n.setDisponivel(true);
                         }

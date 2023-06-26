@@ -55,19 +55,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\aluno\\.nuget\\packages\\": {}
+    "/home/traineeti12/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\aluno\\Documents\\GitHub\\ReservaHotel\\ReservaHotel.csproj",
+      "projectUniqueName": "/home/traineeti12/Documentos/Jheison/ReservaHotel/ReservaHotel.csproj",
       "projectName": "ReservaHotel",
-      "projectPath": "C:\\Users\\aluno\\Documents\\GitHub\\ReservaHotel\\ReservaHotel.csproj",
-      "packagesPath": "C:\\Users\\aluno\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\aluno\\Documents\\GitHub\\ReservaHotel\\obj\\",
+      "projectPath": "/home/traineeti12/Documentos/Jheison/ReservaHotel/ReservaHotel.csproj",
+      "packagesPath": "/home/traineeti12/.nuget/packages/",
+      "outputPath": "/home/traineeti12/Documentos/Jheison/ReservaHotel/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\aluno\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "/home/traineeti12/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net6.0"
@@ -112,7 +112,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.406\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/snap/dotnet-sdk/213/sdk/6.0.411/RuntimeIdentifierGraph.json"
       }
     }
   }
