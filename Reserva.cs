@@ -38,22 +38,22 @@ namespace Hotel{
             int qtdPessoas = Int32.Parse(hotel.NullString(Console.ReadLine()));
             Console.Clear();
 
-            Console.WriteLine("\nPara qual ano deseja fazer o checkin?:");
+            Console.WriteLine("\nPara qual ano deseja fazer o check-in?:");
             int ano = Int32.Parse(hotel.NullString(Console.ReadLine()));
-            Console.WriteLine("\nSelecione o mês de checkin:");
+            Console.WriteLine("\nSelecione o mês de check-in:");
             Console.WriteLine("\n1 - Janeiro\n2 - Fevereiro\n3 - Março\n4 - Abril\n5 - Maio\n6 - Junho\n7 - Julho\n8 - Agosto\n9 - Setembro\n10 - Outubro\n11 - Novembro\n12 - Dezembro");
             int mes = Int32.Parse(hotel.NullString(Console.ReadLine()));
-            Console.WriteLine("\nSelecione o dia de checkin:");
+            Console.WriteLine("\nSelecione o dia de check-in:");
             int dia = Int32.Parse(hotel.NullString(Console.ReadLine()));
             DateTime checkin = new DateTime(year: ano, month: mes, day: dia);
             Console.Clear();
 
-            Console.WriteLine("\nPara qual ano deseja fazer o checkout?:");
+            Console.WriteLine("\nPara qual ano deseja fazer o check-out?:");
             ano = Int32.Parse(hotel.NullString(Console.ReadLine()));
-            Console.WriteLine("\nSelecione o mês de checkout:");
+            Console.WriteLine("\nSelecione o mês de check-out:");
             Console.WriteLine("\n1 - Janeiro\n2 - Fevereiro\n3 - Março\n4 - Abril\n5 - Maio\n6 - Junho\n7 - Julho\n8 - Agosto\n9 - Setembro\n10 - Outubro\n11 - Novembro\n12 - Dezembro");
             mes = Int32.Parse(hotel.NullString(Console.ReadLine()));
-            Console.WriteLine("\nSelecione o dia de checkout:");
+            Console.WriteLine("\nSelecione o dia de check-out:");
             dia = Int32.Parse(hotel.NullString(Console.ReadLine()));
             DateTime checkout = new DateTime(year: ano, month: mes, day: dia);
 
